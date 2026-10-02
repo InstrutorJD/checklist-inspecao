@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f4ee">
+    <title>Checklist de inspeção</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#inicio" aria-label="Checklist de inspeção, início">
+          <span class="brand-mark" aria-hidden="true">C</span>
+          <span>CAMPO<span class="brand-dot">.</span></span>
+        </a>
+        <div class="topbar-actions">
+          <span class="save-state" id="save-state" role="status">Salvo neste dispositivo</span>
+          <button class="button button-quiet" id="print-button" type="button" title="Imprimir checklist">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v7H7z"/></svg>
+            <span>Imprimir</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="intro" id="inicio" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">INSPEÇÃO DE CAMPO <span>·</span> <time id="today"></time></p>
+          <h1 id="page-title">Checklist de inspeção</h1>
+          <p class="intro-copy">Registre as condições do local e acompanhe cada ponto da vistoria.</p>
+        </div>
+        <div class="progress-panel" aria-live="polite">
+          <div class="progress-heading"><span>Progresso</span><strong id="progress-label">0%</strong></div>
+          <div class="progress-track" role="progressbar" aria-label="Progresso da inspeção" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar"><span id="progress-fill"></span></div>
+          <p id="progress-detail">0 de 12 itens avaliados</p>
+        </div>
+      </section>
+
+      <section class="details" aria-label="Dados da inspeção">
+        <label class="field field-wide">LOCAL INSPECIONADO
+          <input id="location" name="location" type="text" placeholder="Ex.: Unidade, setor ou endereço">
+        </label>
+        <label class="field">RESPONSÁVEL
+          <input id="inspector" name="inspector" type="text" placeholder="Nome do inspetor">
+        </label>
+        <label class="field field-date">DATA
+          <input id="inspection-date" name="inspection-date" type="date">
+        </label>
+      </section>
+
+      <section class="checklist" aria-label="Itens da inspeção">
+        <div class="list-heading">
+          <div><p class="eyebrow">ROTEIRO</p><h2>Pontos de verificação</h2></div>
+          <div class="legend" aria-label="Legenda dos estados">
+            <span><i class="legend-dot dot-ok"></i>Conforme</span>
+            <span><i class="legend-dot dot-alert"></i>Atenção</span>
+          </div>
+        </div>
+        <div id="checklist-sections"></div>
+      </section>
+
+      <footer class="page-footer">
+        <span>Checklist de inspeção <span class="footer-separator">/</span> <span id="footer-year"></span></span>
+        <button class="text-button" id="clear-button" type="button">Limpar inspeção</button>
+      </footer>
+    </main>
+  </body>
+</html>
