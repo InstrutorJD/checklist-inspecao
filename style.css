@@ -108,7 +108,7 @@ h2 { margin-bottom: 0; font-family: Georgia, "Times New Roman", serif; font-size
 }
 
 @media print {
-  body { background: white; }
+  body { background: rgb(134, 32, 32); }
   .page-shell { width: 100%; }
   .topbar { min-height: 50px; }
   .topbar-actions, .text-button { display: none; }
